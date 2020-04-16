@@ -7,11 +7,14 @@ jdbc_db.java // class (no main program) that has useful methods
 
 public class jdbc_insert_student 
 {
+	//private static Connection connection;
+	//private static Statement statement;
+	//private static int sID;
    // The main program that inserts a restaurant
    public static void main(String[] args) throws SQLException 
    {
-   String Username = "USERNAME";              // Change to your own username
-   String mysqlPassword = "PASSWORD";    // Change to your own mysql Password
+   String Username = "fmota";              // Change to your own username
+   String mysqlPassword = "culin3Ai";    // Change to your own mysql Password
 
       // Connect to the database
       jdbc_db myDB = new jdbc_db();
@@ -20,27 +23,35 @@ public class jdbc_insert_student
 
       // For debugging purposes:  Show the database before the insert
       StringBuilder builder = new StringBuilder();
-      String query1 = "SELECT * from Restaurant";
-      builder.append("<br> Table Restaurant before:" + myDB.query(query1) + "<br>");       
+      String query1 = "SELECT * FROM STUDENT;";
+      builder.append("<br> Table STUDENT before:" + myDB.query(query1) + "<br>");       
 
       // Parse input string to get restauranrestaurant Name and Address
-      String restaurant = "4";
+      String id = "4";
       String name = "NAME";
-      String type = "TYPE";
-      String city = "CITY";
+      String major = "MAJOR";
 
       // Read command line arguments
       // args[0] is the first parameter
-      name = args[0];
-      type = args[1];
-      city = args[2];
-
+      id = args[0];
+      name = args[1];
+      major = args[2];
+	  
+	  /*String student_id = "SELECT MAX(STUDENTID) AS STUDENTID FROM STUDENT;";
+	  Statement state = connection.createStatement();
+	  ResultSet res5a = state.executeQuery(student_id);	
+	  if(res5a.next()){
+		sID = res5a.getInt("STUDENTID");
+		sID++;
+	  }*/
       // Insert the new restaurant
-      String input = restaurant + ",'" + name + "','" + type + "','" + city + "'";               
-      myDB.insert("Restaurant", input);    // insert new restaurant
+      String input = id + ",'" + name + "','" + major + "'"; 
+	  
+	  //,'" + city + "'";               
+      myDB.insert("STUDENT", input);    // insert new restaurant
 
       // For debugging purposes:  Show the database after the insert
-      builder.append("<br><br><br> Table Restaurant after:" + myDB.query(query1));
+      builder.append("<br><br><br> Table STUDENT after:" + myDB.query(query1));
       System.out.println(builder.toString());     
 
       myDB.disConnect();

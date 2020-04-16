@@ -9,7 +9,7 @@
 	1) Add a student to the Student table <input name="submit" type="submit" value="click here"><br>
 	</form>
 	
-	<form action="jdbc_insert_class.php" method="post">
+	<form action="jdbc_insert_course.php" method="post">
 	2) Add a course to the Course table <input name="submit" type="submit" value="click here"><br>
 	</form>
 	
@@ -41,17 +41,17 @@
 if (isset($_POST['submit'])) 
 {
     // add ' ' around multiple strings so they are treated as single command line args
-    $name = escapeshellarg($_POST[name]);
+//    $name = escapeshellarg($_POST[name]);
 
     // build the linux command that you want executed;  
-    $command = 'java hello ' . $name;
+//    $command = 'java hello ' . $name;
 
     // remove dangerous characters from command to protect web server
-    $command = escapeshellcmd($command);
+//    $command = escapeshellcmd($command);
  
     // echo then run the command
-    echo "command: $command <br>";
-    system($command);           
+//    echo "command: $command <br>";
+//    system($command);           
 }
 ?>
 

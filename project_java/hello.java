@@ -1,4 +1,4 @@
-public class hello 
+/*public class hello 
 {
    public static void main(String[] args) 
    {
@@ -10,4 +10,4 @@ public class hello
       // echo the name to the web page
       System.out.println("Hello " +  name + "<br> <br>");
     }
-}
+}*/
