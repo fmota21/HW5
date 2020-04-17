@@ -5,7 +5,7 @@ jdbc_insert_restaurant.java    // java program that is called by php that just d
 jdbc_db.java // class (no main program) that has useful methods
 */
 
-public class jdbc_insert_course 
+public class jdbc_view_courses_dep 
 {
 	//private static Connection connection;
 	//private static Statement statement;
@@ -27,33 +27,27 @@ public class jdbc_insert_course
       builder.append("<br> Table COURSE before:" + myDB.query(query1) + "<br>");       
 
       // Parse input string to get restauranrestaurant Name and Address
-      String deptcode = "4";
-      String coursenum = "Number";
-      String title = "classname";
-	  String credithours = "3";
+      String deptcode = "4001";
+   
 
       // Read command line arguments
       // args[0] is the first parameter
       deptcode = args[0];
-      coursenum = args[1];
-      title = args[2];
-	  credithours = args[3];
 	  
-	  /*String student_id = "SELECT MAX(STUDENTID) AS STUDENTID FROM STUDENT;";
-	  Statement state = connection.createStatement();
-	  ResultSet res5a = state.executeQuery(student_id);	
-	  if(res5a.next()){
-		sID = res5a.getInt("STUDENTID");
-		sID++;
-	  }*/
       // Insert the new restaurant
-      String input = deptcode + ",'" + coursenum + "','" + title + "','" + credithours + "'"; 
+      //String input = id + ",'" + name + "','" + major + "'"; 
+	  
 	  
 	  //,'" + city + "'";               
-      myDB.insert("COURSE", input);    // insert new restaurant
+      //myDB.insert("STUDENT", input);    // insert new restaurant
+
+	  //SHOW DATABASE FOR WANTED DEPARTMENT
+	  String query2 = "SELECT * FROM COURSE WHERE DEPTCODE = " + deptcode + ";";
+		
+
 
       // For debugging purposes:  Show the database after the insert
-      builder.append("<br><br><br> Table COURSE after:" + myDB.query(query1));
+      builder.append("<br><br><br> Table COURSE after:" + myDB.query(query2));
       System.out.println(builder.toString());     
 
       myDB.disConnect();

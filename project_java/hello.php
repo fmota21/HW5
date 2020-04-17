@@ -1,6 +1,5 @@
 <html>
 <body>
-<h3>Enter your name:</h3>
 
 <!--<form action="hello.php" method="post">-->
 	Main Menu<br>
@@ -21,7 +20,7 @@
 	4) View all students <input name="submit" type="submit" value="click here"><br>
 	</form>
 	
-	<form action="jdbc_view_courses_department.php" method="post">
+	<form action="jdbc_view_courses_dep.php" method="post">
 	5) View all courses from a given department <input name="submit" type="submit" value="click here"><br>
 	</form>
 	
